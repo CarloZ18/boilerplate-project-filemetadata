@@ -8,9 +8,9 @@ const getFileInfoService = async (file) => {
     size: size,
   };
   
-  
+
   try {
-    const findFile = await Files.find({ name: 'hola' });
+    const findFile = await Files.find({ name: originalname });
     const newFileInDB =
       findFile.length < 1 ? await Files.create(newFile) : findFile[0];
     newFileInDB.save();
